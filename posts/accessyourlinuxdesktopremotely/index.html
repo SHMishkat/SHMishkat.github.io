@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="color-scheme" content="light dark">
+
+    
+      <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self' https://lichess.org https://docs.google.com/ https://www.youtube.com/; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self' https://lichess.org https://docs.google.com/ https://www.youtube.com/; img-src 'self'; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; prefetch-src 'self'; connect-src 'self' https://www.google-analytics.com;">
+
+    
+
+    <meta name="author" content="Sarowar Hossain Mishkat">
+    <meta name="description" content="Using my old computer as a media server and seedbox">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Access Your Linux Desktop Remotely"/>
+<meta name="twitter:description" content="Using my old computer as a media server and seedbox"/>
+
+    <meta property="og:title" content="Access Your Linux Desktop Remotely" />
+<meta property="og:description" content="Using my old computer as a media server and seedbox" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://shmishkat.github.io/posts/accessyourlinuxdesktopremotely/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-07-09T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-07-09T00:00:00&#43;00:00" />
+
+
+
+    <title>
+  Access Your Linux Desktop Remotely · Sarowar H. Mishkat
+</title>
+
+    
+      <link rel="canonical" href="https://shmishkat.github.io/posts/accessyourlinuxdesktopremotely/">
+    
+
+    <link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+    
+      
+      
+      <link rel="stylesheet" href="/css/coder.min.93c41bf1e522f85ecda7355985f09000f71fc1d64dda9f74051b0fa06210e93f.css" integrity="sha256-k8Qb8eUi&#43;F7NpzVZhfCQAPcfwdZN2p90BRsPoGIQ6T8=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="/css/coder-dark.min.f37febc669ce189201c1918fac1948a254686c8d366a312c2d72b2bb71ad97d1.css" integrity="sha256-83/rxmnOGJIBwZGPrBlIolRobI02ajEsLXKyu3Gtl9E=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+    
+
+    <meta name="generator" content="Hugo 0.83.1" />
+  </head>
+
+  
+  
+    
+  
+  <body class="preload-transitions colorscheme-auto"
+        onload=""
+  >
+    
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Sarowar H. Mishkat
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/contact/">Contact me</a>
+            </li>
+          
+        
+        
+          
+          
+          
+            
+              
+                <li class="navigation-item menu-separator">
+                  <span>|</span>
+                </li>
+                
+              
+              <li class="navigation-item">
+                <a href="https://shmishkat.github.io/bn-bd/posts/accessyourlinuxdesktopremotely/">🇧🇩</a>
+              </li>
+            
+          
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://shmishkat.github.io/posts/accessyourlinuxdesktopremotely/">
+              Access Your Linux Desktop Remotely
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime='2021-07-09T00:00:00Z'>
+                July 9, 2021
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              4-minute read
+            </span>
+          </div>
+          
+          
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/linux/">Linux</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/kubuntu/">Kubuntu</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/krfb/">Krfb</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/remote-acess/">Remote Acess</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/kwallet/">KWallet</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/vnc/">VNC</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/macos/">MacOS</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/qbittorrent/">qBittorrent</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/plex/">Plex</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/kde-plasma/">KDE Plasma</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        <p>I was contemplating a project like a media server, torrent seedbox, or simply backup files via P2P(i. e. Resilio Sync) using a Raspberry Pi 4. Then I realized I have an 11-12 y/o desktop PC in my room that I can use for the project. Well, this PC will draw way more electricity than a Raspberry Pi would but I wanted to test it then I’ll consider building such a system.</p>
+<h4 id="here-are-the-requirements-and-objectives">
+  Here are the requirements and objectives:
+  <a class="heading-link" href="#here-are-the-requirements-and-objectives">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<ul>
+<li>Using Linux desktop remotely on any device (GUI).</li>
+<li>Only powering on the Linux desktop should work. (No tasks on the Linux desktop rather plug and play).</li>
+<li>Direct access remotely without providing any password on Linux desktop i. e. User login, remote desktop server because I want to use the Linux desktop without a monitor.</li>
+<li>Lightweight remote access server app for the Linux desktop since it’s an old machine.</li>
+</ul>
+<h4 id="pc-configuration">
+  PC Configuration:
+  <a class="heading-link" href="#pc-configuration">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<p><img src="/images/accessLinuxRemotely/pcconfig.png" alt="PC Config" title="PC Config"></p>
+<p>So Let’s Begin!
+First of all, the 4GB stick along with the slot got burnt so I had to work with 2GB ram only, hence I needed a lightweight Linux distro. I chose Kubuntu 20.04 LTS which came with KDE Plasma 5 desktop environment.</p>
+<p>I used the <a href="https://github.com/KDE/krfb" title="Krfb's GitHub Repository">Krfb</a> desktop sharing application developed by <a href="https://kde.org/" title="KDE Website">KDE</a> which is open-source and lightweight.</p>
+<p>To install Krfb on your Linux system, open up the terminal (Konsole on Kubuntu) and run these commands.</p>
+<blockquote>
+<p>sudo apt-get update</p>
+</blockquote>
+<blockquote>
+<p>sudo apt install krdc</p>
+</blockquote>
+<p>Since one of my requirements was that I didn’t want to configure anything on the Linux system every time I rebooted it. So, I had to enable automatic login. </br>
+<em><strong>Click on the Application Launcher&gt;Click on your profile&gt;Select automatic login.</strong></em></p>
+<p>Then I needed to make sure Krfb was started automatically at login.</br>
+<em><strong>Click on Application Launcher&gt;Search Autostart and open the application&gt;Click on app program&gt;Search “Krfb” and add it to the list.</strong></em></br></p>
+<p>I also added qBittorent and Plex Media Server to the list because I wanted to access the qBittorent and Plex Media Server Web UI.</p>
+<h4 id="now-open-up-krfb-and-you-should-see-something-like-this">
+  Now open up Krfb and you should see something like this:
+  <a class="heading-link" href="#now-open-up-krfb-and-you-should-see-something-like-this">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<p><img src="/images/accessLinuxRemotely/krfb.png" alt="Krfb" title="Krfb"></p>
+<p>Check <strong>Enable Desktop Sharing</strong> and then you should be able to see your Linux desktop’s IP address which we will use to access this desktop remotely. Then set a strong password. You will see another field named <strong>Unattended Access</strong>, which was very important in my case.
+So <strong>Unattended Access</strong> is basically if someone has the password and IP address of your machine s/he will be able to access your machine anytime and as many times as they want without any confirmation from you. Unattended access was the way to go for me since I didn’t want to give permission every time I tried to access the desktop. I recommend keeping both of the passwords the same.</p>
+<p>On Kubuntu, <strong>Kwallet</strong> handles the passwords so every time you reboot your Linux system Kwallet pops up and asks for the password for Krfb. If you turn off Kwallent completely Krfb won’t remember its password so let’s <em><strong>search KDE Wallet in the application launcher and open KDE Wallet and select “Close when the last application stops using it.”</strong></em></p>
+<p>Now go to the device where you want to access the Linux desktop remotely.
+You can use any VNC Client application like <strong>VNC Viewer</strong> by <strong>RealVNC</strong> or if you have any built-in one. In my case, I wanted to access it on my MacBook Pro which had a built-in VNC Viewer named <strong>&ldquo;Screen Sharing&rdquo;</strong>. <em><strong>Open up the VNC Client you have and type the IP address that we found on Krfb, like this &ldquo;VNC://(IP address of the Linux desktop)&rdquo;. It will prompt for the password, type it and press enter.</strong></em></p>
+<h4 id="voilà-now-you-have-remote-access-to-the-linux-desktop">
+  Voilà! Now you have remote access to the Linux desktop.
+  <a class="heading-link" href="#voil%c3%a0-now-you-have-remote-access-to-the-linux-desktop">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<p><img src="/images/accessLinuxRemotely/remoteaccess.png" alt="Remote access of the Linux desktop on MacBook Pro" title="Remote access of the Linux desktop on MacBook Pro"></p>
+<h4 id="extras">
+  Extras:
+  <a class="heading-link" href="#extras">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<p>I used qBittorrent to download torrents and Plex Media Server for my media server. Luckily both had Web UIs, hence I could access both of them from my web browser and all the other tasks could be done using remote access.</p>
+<p><strong>Thanks for reading!</strong></br>
+Hopefully next time I’ll post on how to use SSH to access remote Linux devices which will be more straightforward.</p>
+<p>Feel free to email me if you have any queries.</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      
+  <footer class="footer">
+    <section class="container">
+      
+        <p>Last Updated 9th of July 21</p>
+      
+      
+        ©
+        
+          2019 -
+        
+        2021
+         Sarowar Hossain Mishkat 
+      
+      
+         · 
+        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+      
+      
+        
+      
+    </section>
+  </footer>
+
+
+    </main>
+
+    
+      
+      <script src="/js/coder.min.235666b114443867d43eeb5799d51f6252965e5163f338285e113fa381d3d27e.js" integrity="sha256-I1ZmsRREOGfUPutXmdUfYlKWXlFj8zgoXhE/o4HT0n4="></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+  </body>
+
+</html>

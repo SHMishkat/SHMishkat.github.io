@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on সারোয়ার হোসেন মিশকাত</title>
+    <link>https://shmishkat.github.io/bn-bd/tags/linux/</link>
+    <description>Recent content in Linux on সারোয়ার হোসেন মিশকাত</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 09 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://shmishkat.github.io/bn-bd/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Access Your Linux Desktop Remotely</title>
+      <link>https://shmishkat.github.io/bn-bd/posts/accessyourlinuxdesktopremotely/</link>
+      <pubDate>Fri, 09 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://shmishkat.github.io/bn-bd/posts/accessyourlinuxdesktopremotely/</guid>
+      <description>I was contemplating a project like a media server, torrent seedbox, or simply backup files via P2P(i. e. Resilio Sync) using a Raspberry Pi 4. Then I realized I have an 11-12 y/o desktop PC in my room that I can use for the project. Well, this PC will draw way more electricity than a Raspberry Pi would but I wanted to test it then I’ll consider building such a system.</description>
+    </item>
+    
+  </channel>
+</rss>
